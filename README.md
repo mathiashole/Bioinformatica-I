@@ -17,7 +17,8 @@ Este documento contiene dos ejercicios desarrollados en **Python** y **Bash**.
 
 ### Bash  
 - Herramientas necesarias:  
-  - `mafft`, `muscle`, `clustalw`, `poa`, `seqret`, `edialign`  
+  - `mafft`, `muscle`, `clustalw`, `poa`, `seqret`, `edialign`
+  - **BaliBase** para tener alineamientos de referencia.  
   - **Bali-score** para evaluar los alineamientos.
 
 ---
