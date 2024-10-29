@@ -25,7 +25,7 @@ Este documento contiene dos ejercicios desarrollados en **Python** y **Bash**.
 
 ## Ejercicio 1: Búsqueda de motivos en ADN (Python)
 
-Este script permite encontrar motivos específicos en secuencias de ADN. Admite coincidencias exactas e inexactas con un número máximo de *mismatches* permitido.
+Este programa permite encontrar motivos específicos en secuencias de ADN. Admite coincidencias exactas e inexactas con un número máximo de *mismatches* permitido.
 
 ### Uso  
 
