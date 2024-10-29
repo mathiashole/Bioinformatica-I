@@ -34,3 +34,26 @@ Este script permite encontrar motivos específicos en secuencias de ADN. Admite 
    git clone <tu-repositorio-url>
    cd <nombre-del-repositorio>
    ```
+2. Abre Google Colab con el respectivo codigo de `Ejercicio1.ipynb`.
+
+3.  Al ejecutar el script, sigue estos pasos:
+        Introduce una secuencia de ADN de al menos 6 nucleótidos.
+        Ingresa un motivo de exactamente 6 nucleótidos.
+        Elige entre coincidencia exacta o inexacta.
+        En caso de coincidencia inexacta, proporciona el número máximo de mismatches permitidos.
+
+#### Ejemplo de Ejecución
+
+```yaml
+
+Introduce aquí la secuencia de ADN que deseas analizar: ATGCTAGCTACGTA  
+Introduce el motivo (debe tener un largo de 6 nucleótidos): ATGCTA  
+Introduce la modalidad deseada:
+  (a) Exacto
+  (b) Inexacto
+b
+Introduce el número de mismatches permitidos (entre 1 y 6): 2
+Lista de las ocurrencias encontradas y sus posiciones en la secuencia:
+ATGCTA : 1-6
+```
+
