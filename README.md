@@ -7,7 +7,7 @@ Este documento contiene dos ejercicios desarrollados en **Python** y **Bash**.
 ## Estructura del Proyecto
 
 - **Ejercicio 1 (Python):** Búsqueda de motivos en secuencias de ADN con coincidencias exactas e inexactas.  
-- **Ejercicio 2 (Bash):** Alineamiento y evaluación de secuencias utilizando múltiples algoritmos.
+- **Ejercicio 2 (Bash):** Alineamiento y evaluación de Alineamiento utilizando múltiples algoritmos.
 
 ## Requisitos
 
