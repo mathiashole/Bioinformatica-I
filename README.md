@@ -57,3 +57,35 @@ Lista de las ocurrencias encontradas y sus posiciones en la secuencia:
 ATGCTA : 1-6
 ```
 
+## Ejercicio 2: Alineamiento de secuencias (Bash)
+
+Este script realiza alineamientos utilizando varios algoritmos (MAFFT, MUSCLE, ClustalW, POA, Dialign) y evalúa los resultados con Bali-score.
+
+### Uso
+
+1.  Clona el repositorio:
+
+```bash
+
+git clone <tu-repositorio-url>
+cd <nombre-del-repositorio>
+```
+
+2.  Asegúrate de tener instaladas las herramientas mafft muscle clustalw emboss poa t-coffee dialign
+
+3.  Provee las rutas de los benchmarks como argumentos:
+
+```bash
+
+    ./alignment_socre_balibase.sh <ruta_benchmark1> <ruta_benchmark2> ... <ruta_benchmarkN>
+```    
+
+El script realiza alineamientos con múltiples algoritmos, convierte los resultados a formato MSF, evalúa los alineamientos con BaliScore y guarda los resultados en un archivo TSV.
+
+#### Ejemplo de Ejecución
+
+```bash
+
+./alignment_socre_balibase.sh /ruta/al/benchmark1 /ruta/al/benchmark2
+
+```
