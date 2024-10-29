@@ -2,7 +2,7 @@
 
 # Introducción
 
-Este documento contiene dos ejercicios desarrollados en **Python** y **Bash** para realizar análisis relacionados con secuencias biológicas.
+Este documento contiene dos ejercicios desarrollados en **Python** y **Bash**.
 
 ## Estructura del Proyecto
 
