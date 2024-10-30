@@ -70,11 +70,11 @@ extract_auto_line() {
 }
 
 evaluate_alignments() {
-  echo "Evaluating alignments with Bali-score..."
+  echo "Evaluating alignments with Bali-score..." # show message
 
   # Create the TSV file with the header
-  local output_tsv="alignment_results.tsv"
-  echo -e "benchmark\tsequence\tSP\tTC" > "$output_tsv"
+  local output_tsv="alignment_results.tsv" # created local variable
+  echo -e "benchmark\tsequence\tSP\tTC" > "$output_tsv" # Print Header
 
   for benchmark_path in "$@"; do
     local base_benchmark=$(basename "$benchmark_path")
