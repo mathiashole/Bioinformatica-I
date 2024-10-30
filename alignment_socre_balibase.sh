@@ -82,12 +82,12 @@ evaluate_alignments() {
     # Search for MSF files in the benchmark
     for msf_file in "$benchmark_path"*.msf; do # Loops to msf file and extract information
       if [[ ! -f "$msf_file" ]]; then
-        echo "Warning: No MSF files found in $benchmark_path"
+        echo "Warning: No MSF files found in $benchmark_path" # if empty msf file show message
         continue
       fi
 
-      local msf_name=$(basename "$msf_file" .msf)
-      local search_pattern="$output_dir$base_benchmark/${msf_name}_*.msf"
+      local msf_name=$(basename "$msf_file" .msf) # variable local to final file
+      local search_pattern="$output_dir$base_benchmark/${msf_name}_*.msf" # local variable to search pattern match
       local matching_files=( $search_pattern )
 
       if [[ ${#matching_files[@]} -eq 0 ]]; then
