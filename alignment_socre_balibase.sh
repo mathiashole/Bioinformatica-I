@@ -57,13 +57,13 @@ extract_auto_line() {
 
   if [[ -n "$line" ]]; then
     # Extract relevant fields with awk and cut
-    local benchmark=$(echo "$line" | awk '{print $2}' | cut -d'/' -f2)
-    local sequence=$(echo "$line" | awk '{print $2}' | cut -d'/' -f3)
-    local sp=$(echo "$line" | awk '{print $3}')
-    local tc=$(echo "$line" | awk '{print $4}')
+    local benchmark=$(echo "$line" | awk '{print $2}' | cut -d'/' -f2) # parse benchmark information with awk
+    local sequence=$(echo "$line" | awk '{print $2}' | cut -d'/' -f3) # parse sequence information with awk
+    local sp=$(echo "$line" | awk '{print $3}') # parse sp score information with awk
+    local tc=$(echo "$line" | awk '{print $4}') # parse tc score information with awk
 
     # Add the data to the TSV file
-    echo -e "$benchmark\t$sequence\t$sp\t$tc" >> "$output_tsv" # put information in output local variable
+    echo -e "$benchmark\t$sequence\t$sp\t$tc" >> "$output_tsv" # put information in tsv format
   else
     echo "Warning: No 'auto' line found in $result_file"
   fi
