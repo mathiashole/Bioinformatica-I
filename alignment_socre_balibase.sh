@@ -80,7 +80,7 @@ evaluate_alignments() {
     local base_benchmark=$(basename "$benchmark_path") # created local variabe to directory name
 
     # Search for MSF files in the benchmark
-    for msf_file in "$benchmark_path"*.msf; do
+    for msf_file in "$benchmark_path"*.msf; do # Loops to msf file and extract information
       if [[ ! -f "$msf_file" ]]; then
         echo "Warning: No MSF files found in $benchmark_path"
         continue
