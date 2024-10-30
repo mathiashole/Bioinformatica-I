@@ -76,8 +76,8 @@ evaluate_alignments() {
   local output_tsv="alignment_results.tsv" # created local variable
   echo -e "benchmark\tsequence\tSP\tTC" > "$output_tsv" # Print Header
 
-  for benchmark_path in "$@"; do
-    local base_benchmark=$(basename "$benchmark_path")
+  for benchmark_path in "$@"; do # Loops to benchmark subsets
+    local base_benchmark=$(basename "$benchmark_path") # created local variabe to directory name
 
     # Search for MSF files in the benchmark
     for msf_file in "$benchmark_path"*.msf; do
