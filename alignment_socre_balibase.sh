@@ -17,32 +17,32 @@ align_sequences() {
     base_benchmark=$(basename "$benchmark_path")
     mkdir -p "$output_dir/$base_benchmark"
 
-    for file in "$benchmark_path"/*.in_tfa; do
-      base_name=$(basename "$file" .in_tfa)
+    for file in "$benchmark_path"/*.in_tfa; do # loops to sequence
+      base_name=$(basename "$file" .in_tfa) # extract name
 
       # MAFFT
-      mafft --auto "$file" > "$output_dir$base_benchmark/${base_name}_mafft.aln"
-      seqret -sequence "$output_dir$base_benchmark/${base_name}_mafft.aln" -outseq "$output_dir$base_benchmark/${base_name}_mafft.msf" -osformat2 msf
+      mafft --auto "$file" > "$output_dir$base_benchmark/${base_name}_mafft.aln" # alignment 
+      seqret -sequence "$output_dir$base_benchmark/${base_name}_mafft.aln" -outseq "$output_dir$base_benchmark/${base_name}_mafft.msf" -osformat2 msf # fchanged format
 
       # MUSCLE
-      muscle -in "$file" -out "$output_dir$base_benchmark/${base_name}_muscle.aln"
-      seqret -sequence "$output_dir$base_benchmark/${base_name}_muscle.aln" -outseq "$output_dir$base_benchmark/${base_name}_muscle.msf" -osformat2 msf
+      muscle -in "$file" -out "$output_dir$base_benchmark/${base_name}_muscle.aln" # alignment 
+      seqret -sequence "$output_dir$base_benchmark/${base_name}_muscle.aln" -outseq "$output_dir$base_benchmark/${base_name}_muscle.msf" -osformat2 msf #changed format
 
       # ClustalW
-      clustalw -infile="$file" -outfile="$output_dir$base_benchmark/${base_name}_clustalw.aln"
-      seqret -sequence "$output_dir$base_benchmark/${base_name}_clustalw.aln" -outseq "$output_dir$base_benchmark/${base_name}_clustalw.msf" -osformat2 msf
+      clustalw -infile="$file" -outfile="$output_dir$base_benchmark/${base_name}_clustalw.aln" # alignment 
+      seqret -sequence "$output_dir$base_benchmark/${base_name}_clustalw.aln" -outseq "$output_dir$base_benchmark/${base_name}_clustalw.msf" -osformat2 msf #changed format
 
       # T-Coffee
-      #t_coffee -infile="$file" -output=fasta_aln -outfile "$output_dir$base_benchmark/${base_name}_tcoffee.aln"
-      #seqret -sequence "$output_dir$base_benchmark/${base_name}_tcoffee.aln" -outseq "$output_dir$base_benchmark/${base_name}_tcoffee.msf" -osformat2 msf
+      #t_coffee -infile="$file" -output=fasta_aln -outfile "$output_dir$base_benchmark/${base_name}_tcoffee.aln" # alignment 
+      #seqret -sequence "$output_dir$base_benchmark/${base_name}_tcoffee.aln" -outseq "$output_dir$base_benchmark/${base_name}_tcoffee.msf" -osformat2 msf # changed format
 
       # POA
-      poa -read_fasta "$file" -clustal "$output_dir$base_benchmark/${base_name}_poa.aln" -matrix /usr/share/poa/blosum80.mat
-      seqret -sequence "$output_dir$base_benchmark/${base_name}_poa.aln" -outseq "$output_dir$base_benchmark/${base_name}_poa.msf" -osformat2 msf
+      poa -read_fasta "$file" -clustal "$output_dir$base_benchmark/${base_name}_poa.aln" -matrix /usr/share/poa/blosum80.mat # alignment 
+      seqret -sequence "$output_dir$base_benchmark/${base_name}_poa.aln" -outseq "$output_dir$base_benchmark/${base_name}_poa.msf" -osformat2 msf #changed format
 
       # Dialign
-      edialign -sequence "$file" -outfile .fasta -outseq "$output_dir$base_benchmark/${base_name}_dialign.aln"
-      seqret -sequence "$output_dir$base_benchmark/${base_name}_dialign.aln" -outseq "$output_dir$base_benchmark/${base_name}_dialign.msf" -osformat2 msf
+      edialign -sequence "$file" -outfile .fasta -outseq "$output_dir$base_benchmark/${base_name}_dialign.aln" # alignment 
+      seqret -sequence "$output_dir$base_benchmark/${base_name}_dialign.aln" -outseq "$output_dir$base_benchmark/${base_name}_dialign.msf" -osformat2 msf # Changed format
 
     done
   done
