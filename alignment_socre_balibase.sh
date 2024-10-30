@@ -90,8 +90,8 @@ evaluate_alignments() {
       local search_pattern="$output_dir$base_benchmark/${msf_name}_*.msf" # local variable to search pattern match
       local matching_files=( $search_pattern )
 
-      if [[ ${#matching_files[@]} -eq 0 ]]; then
-        echo "Warning: No alignment found for $msf_name in $output_dir$base_benchmark."
+      if [[ ${#matching_files[@]} -eq 0 ]]; then # search alignment in results
+        echo "Warning: No alignment found for $msf_name in $output_dir$base_benchmark." # there are any alignment show message 
         continue
       fi
 
