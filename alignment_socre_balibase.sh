@@ -8,7 +8,7 @@ fi
 
 # Create directory for results
 output_dir="balibase_results/"
-mkdir -p "$output_dir"
+mkdir -p "$output_dir" # created results directory
 
 # Align all sequences of benchmarks passed as arguments
 align_sequences() {
