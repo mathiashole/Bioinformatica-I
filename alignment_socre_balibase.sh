@@ -95,17 +95,17 @@ evaluate_alignments() {
         continue
       fi
 
-      for aln_file in "${matching_files[@]}"; do
-        local file_name=$(basename "$aln_file")
-        local algorithm="${file_name#*_}"
+      for aln_file in "${matching_files[@]}"; do # loops to alignment results
+        local file_name=$(basename "$aln_file") ## created another local variable
+        local algorithm="${file_name#*_}" # name of algorithm
         algorithm="${algorithm%%.*}"
 
-        local result_file="$output_dir$base_benchmark/${msf_name}_${algorithm}_score.txt"
+        local result_file="$output_dir$base_benchmark/${msf_name}_${algorithm}_score.txt" # created final name of file
 
         echo "Evaluating $aln_file against $msf_file: result $result_file"
 
         # Run the evaluation with bali_score
-        ./BAliBASE_R9/src/bali_score "$msf_file" "$aln_file" -v > "$result_file"
+        ./BAliBASE_R9/src/bali_score "$msf_file" "$aln_file" -v > "$result_file" # executed bali score
 
         # Extract the relevant line and add it to the TSV
         extract_auto_line "$result_file" "$output_tsv"
