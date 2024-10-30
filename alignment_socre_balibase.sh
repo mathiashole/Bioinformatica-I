@@ -108,7 +108,7 @@ evaluate_alignments() {
         ./BAliBASE_R9/src/bali_score "$msf_file" "$aln_file" -v > "$result_file" # executed bali score
 
         # Extract the relevant line and add it to the TSV
-        extract_auto_line "$result_file" "$output_tsv"
+        extract_auto_line "$result_file" "$output_tsv" # execute extract information of score file
 
       done
     done
