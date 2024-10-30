@@ -74,7 +74,7 @@ evaluate_alignments() {
 
   # Create the TSV file with the header
   local output_tsv="alignment_results.tsv" # created local variable
-  echo -e "benchmark\tsequence\tSP\tTC" > "$output_tsv" # Print Header
+  echo -e "benchmark\tsequence\tSP\tTC" > "$output_tsv" # Print Header and save in local variable
 
   for benchmark_path in "$@"; do # Loops to benchmark subsets
     local base_benchmark=$(basename "$benchmark_path") # created local variabe to directory name
