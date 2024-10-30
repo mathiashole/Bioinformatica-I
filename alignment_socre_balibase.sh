@@ -53,7 +53,7 @@ extract_auto_line() {
   local output_tsv="$2"
 
   # Find the line that starts with "auto"
-  local line=$(grep "^auto" "$result_file")
+  local line=$(grep "^auto" "$result_file") # search line of total information
 
   if [[ -n "$line" ]]; then
     # Extract relevant fields with awk and cut
@@ -63,7 +63,7 @@ extract_auto_line() {
     local tc=$(echo "$line" | awk '{print $4}')
 
     # Add the data to the TSV file
-    echo -e "$benchmark\t$sequence\t$sp\t$tc" >> "$output_tsv"
+    echo -e "$benchmark\t$sequence\t$sp\t$tc" >> "$output_tsv" # put information in output local variable
   else
     echo "Warning: No 'auto' line found in $result_file"
   fi
